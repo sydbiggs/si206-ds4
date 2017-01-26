@@ -1,5 +1,7 @@
 # function to return the factorial of a number
 # Add comments
+import unittest
+
 def factorial(num):
     ans = 1
     if num < 0:
@@ -32,3 +34,19 @@ print("check_leap_year(2000): {}".format(check_leap_year(2000)))
 print("check_leap_year(1990): {}".format(check_leap_year(1990)))
 print("check_leap_year(2012): {}".format(check_leap_year(2012)))
 print("check_leap_year(2100): {}".format(check_leap_year(2100)))
+
+
+class Testing_factorial(unittest.TestCase):
+    def test_factorial_return(self):
+        self.assertEqual(type(factorial(1)), type(1))
+    def test_factorial_value(self):
+        self.assertEqual(factorial(1),1)
+class Testing_leap_year(unittest.TestCase):
+    def test_leap_year_true(self):
+        self.assertEqual(check_leap_year(2020), True)
+    def test_leap_year_type(self):
+        self.assertEqual(type(check_leap_year(2020)), type(False))
+unittest.main(verbosity=2)
+
+
+
